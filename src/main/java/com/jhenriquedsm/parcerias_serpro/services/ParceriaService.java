@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ParceriaService {
@@ -26,10 +25,11 @@ public class ParceriaService {
     }
 
     public Parceria create(Parceria parceria) {
-        Optional<Parceria> savedPerson = parceriaRepository.findById(parceria.getId());
-        if (savedPerson.isPresent()){
-            throw new ParceriaAlreadyExistsException("Parceria já existente com id: " + parceria.getId());
+        if (parceriaRepository.existsByTitle(parceria.getTitle())) {
+            throw new ParceriaAlreadyExistsException("Parceria já existente com título: " + parceria.getTitle());
         }
+
+        parceria.setId(null);
         return parceriaRepository.save(parceria);
     }
 

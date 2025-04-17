@@ -1,26 +1,18 @@
 package com.jhenriquedsm.parcerias_serpro.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 @Table(name = "parceria")
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 public class Parceria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String title;
 
     @Column(nullable = false)
@@ -28,6 +20,53 @@ public class Parceria {
 
     @Column(name = "news_date", nullable = false)
     private LocalDate newsDate;
+
+    public Parceria() {}
+
+    public Parceria(Long id, String title, String url, LocalDate newsDate) {
+        this.id = id;
+        this.title = title;
+        this.url = url;
+        this.newsDate = newsDate;
+    }
+
+    public Parceria(String title, String url, LocalDate newsDate) {
+        this.title = title;
+        this.url = url;
+        this.newsDate = newsDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public LocalDate getNewsDate() {
+        return newsDate;
+    }
+
+    public void setNewsDate(LocalDate newsDate) {
+        this.newsDate = newsDate;
+    }
 
     @Override
     public boolean equals(Object o) {
