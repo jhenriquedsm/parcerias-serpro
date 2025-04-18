@@ -38,14 +38,14 @@ public class ParceriaController {
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Parceria> update(@PathVariable(value = "id") Long id, @RequestBody Parceria parceria) {
         try {
-            if (!id.equals(parceria.getId())) {
-                return ResponseEntity.badRequest().build();
-            }
+            parceria.setId(id);
             return ResponseEntity.ok(parceriaService.update(parceria));
         } catch (Exception e) {
-            return ResponseEntity.notFound().build();
+            e.printStackTrace();
+            return ResponseEntity.status(500).build();
         }
     }
+
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> delete(@PathVariable(value = "id") Long id) {
