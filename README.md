@@ -61,7 +61,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 ## 🧪 Testando a API
 #### Você pode testar os endpoints usando o Swagger: http://localhost:8080/swagger-ui.html
-
+![Swagger](assets/swagger.png)
 ### Exemplo de Requisições: 
 #### Criar parceria
 ```bash
