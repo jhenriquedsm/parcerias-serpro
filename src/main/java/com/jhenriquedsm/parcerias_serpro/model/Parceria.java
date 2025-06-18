@@ -12,10 +12,10 @@ public class Parceria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 500)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String url;
 
     @Column(name = "news_date", nullable = false)
