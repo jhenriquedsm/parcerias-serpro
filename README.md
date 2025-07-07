@@ -6,7 +6,7 @@ Eu sou o José Henrique, estagiário no departamento de Governança de Inovaçã
 
 Com isso, decidi criar este projeto como uma API RESTful utilizando Java e Spring Boot, com o objetivo de otimizar o processo de cadastro, busca, atualização e deleção dessas parcerias. A ideia é substituir o uso de planilhas por uma solução mais ágil, permitindo que os usuários acessem, gerenciem e encontrem as informações de maneira mais prática e organizada.
 
-Além disso, foi feito o deploy do projeto no Render e integrado ao frontend em Next.js, criando assim uma aplicação fullstack.
+Além disso, foi feito o deploy do projeto no Render e integrado ao [frontend em Next.js](https://github.com/jhenriquedsm/parcerias-frontend), criando assim uma aplicação fullstack.
 ## 📌 Funcionalidades
 
 - Criar uma nova parceria
